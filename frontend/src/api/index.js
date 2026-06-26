@@ -19,17 +19,17 @@ api.interceptors.response.use(
 
 // 召唤师
 export const summonerApi = {
-  search(name: string) {
+  search(name) {
     return api.get('/summoner/search', { params: { name } })
   },
-  getProfile(puuid: string) {
-    return api.get(`/summoner/${encodeURIComponent(puuid)}/profile`)
+  getProfile(puuid) {
+    return api.get('/summoner/' + encodeURIComponent(puuid) + '/profile')
   },
-  getMatches(puuid: string, count = 20, start = 0) {
-    return api.get(`/summoner/${encodeURIComponent(puuid)}/matches`, { params: { count, start } })
+  getMatches(puuid, count = 20, start = 0) {
+    return api.get('/summoner/' + encodeURIComponent(puuid) + '/matches', { params: { count, start } })
   },
-  getStats(puuid: string, matchCount = 20) {
-    return api.get(`/summoner/${encodeURIComponent(puuid)}/stats`, { params: { match_count: matchCount } })
+  getStats(puuid, matchCount = 20) {
+    return api.get('/summoner/' + encodeURIComponent(puuid) + '/stats', { params: { match_count: matchCount } })
   },
 }
 
