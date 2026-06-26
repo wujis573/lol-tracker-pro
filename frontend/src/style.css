@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 滚动条 ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+/* ── 工具类 ── */
+.card {
+  @apply bg-white rounded-xl shadow-sm border border-gray-100;
+}
+
+.btn {
+  @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-150 cursor-pointer;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.btn-primary {
+  @apply btn bg-lol-blue text-white hover:opacity-90;
+}
+.btn-gold {
+  @apply btn bg-lol-gold text-lol-dark hover:opacity-90 font-semibold;
+}
+.btn-outline {
+  @apply btn border border-gray-300 text-gray-700 hover:bg-gray-50;
+}
+
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* ── 段位颜色 ── */
+.tier-iron       { color: #7a7a7a; }
+.tier-bronze     { color: #cd7f32; }
+.tier-silver     { color: #a8a8a8; }
+.tier-gold       { color: #f0c020; }
+.tier-platinum   { color: #30efd0; }
+.tier-diamond    { color: #a0d2f0; }
+.tier-emerald    { color: #22c55e; }
+.tier-master     { color: #b44aff; }
+.tier-grandmaster { color: #e04848; }
+.tier-challenger { color: #f0c020; }
