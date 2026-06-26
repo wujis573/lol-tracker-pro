@@ -47,7 +47,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { summonerApi } from '../api'
+import { summonerApi } from './api'
 
 const router = useRouter()
 const query = ref('')
