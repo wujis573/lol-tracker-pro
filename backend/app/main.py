@@ -104,3 +104,11 @@ async def shutdown_event():
     from app.core.opgg_client import opgg
     await riot.close()
     await opgg.close()
+
+
+# Vercel Serverless 入口
+try:
+    from mangum import Mangum
+    vercel_handler = Mangum(app)
+except ImportError:
+    vercel_handler = None
