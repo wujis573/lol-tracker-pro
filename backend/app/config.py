@@ -33,6 +33,15 @@ class Settings(BaseSettings):
     rate_limit_per_second: int = 20
     rate_limit_per_minute: int = 100
 
+    # CORS（逗号分隔的域名列表）
+    cors_origins: str = "*"
+
+    @property
+    def cors_origins_list(self) -> list[str]:
+        if self.cors_origins == "*":
+            return ["*"]
+        return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
+
     # 区域
     default_platform: str = "cn"    # cn / kr / na1 / euw1 / jp1
     default_region: str = "asia"    # asia / americas / europe
